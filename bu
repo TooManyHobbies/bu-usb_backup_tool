@@ -62,6 +62,10 @@ sudo ls >/dev/null
 
 echo "Changing ownership of BU_Drive to $user..."
 sudo chown $user /media/${user}/BU_Drive/
+# Change the ownership of the BU_Backups directory as well
+# This should fix the issue of using the drive on different
+# machines from different user accounts.
+sudo chown $user /media/${user}/BU_Drive/BU_Backups/
 
 # Creating machine specific directories:
 echo "Checking for/creating machine specific directories..."
